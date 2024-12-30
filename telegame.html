@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Growing Game</title>
+    <style>
+        /* تنظیمات صفحه */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb); /* پس‌زمینه گادین رنگی */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* طراحی بخش اصلی صفحه */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2); /* پس‌زمینه نیمه شفاف */
+            border-radius: 15px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        /* طراحی دکمه‌های رنگی */
+        .btn {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b); /* گرادیانت رنگی */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin: 15px;
+        }
+
+        .btn:hover {
+            background-color: #ff6f61;
+            transform: scale(1.1);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        /* انیمیشن برای دکمه‌ها */
+        .btn:active {
+            transform: scale(0.9);
+        }
+
+        /* طراحی پس‌زمینه زنده با انیمیشن */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+            animation: pulse 5s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+            }
+            50% {
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.1));
+            }
+            100% {
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        /* طراحی متن در کادر اصلی */
+        .message-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        .message-box p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <h1>Welcome to the Plant Growing Game!</h1>
+        <div class="message-box">
+            <p>Here, you will grow your virtual plant by watering, taking care of it, and watching it thrive!</p>
+        </div>
+        <button class="btn" onclick="startGame()">Start Game</button>
+        <button class="btn" onclick="showInstructions()">Instructions</button>
+    </div>
+
+    <script>
+        function startGame() {
+            alert('The game has started! Get ready to grow your plant!');
+        }
+
+        function showInstructions() {
+            alert('1. Water your plant regularly.\n2. Take care of your plant for it to grow.\n3. Have fun!');
+        }
+    </script>
+
+</body>
+</html>
